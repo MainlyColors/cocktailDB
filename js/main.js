@@ -83,13 +83,6 @@ function centerCardsInCarousel(containerEl, cardClass) {
   onlyCardElements.forEach(
     (el) => (el.style.transform = `translateX(${translateAmount}px)`)
   );
-  console.log(translateAmount);
-  const dimensionsObj = {
-    cardWidth: width,
-    cardLeftMargin: marginLeft,
-  };
-  console.log(dimensionsObj);
-  console.log(onlyCardElements);
 }
 
 /**
@@ -120,16 +113,10 @@ function slideCards(e) {
   if (Math.abs(currentTranslateX) >= (totalCardWidth * cardArr.length) / 2)
     currentTranslateX = -1 * currentTranslateX;
 
-  console.log({
-    currentTranslateX,
-    math: currentTranslateX - totalCardWidth / 2,
-  });
-
   const elementTranslateMathObj = {
     left: currentTranslateX + totalCardWidth / 2,
     right: currentTranslateX - totalCardWidth / 2,
   };
-  // console.log(buttonClicked);
 
   // change TranslateX
   cardArr.forEach(
@@ -145,7 +132,6 @@ document.querySelector('button').addEventListener('click', (e) => {
   let inputValue = document.querySelector('input').value;
 
   inputValue.split(' ').join('_');
-  cardContainer.innerHTML = '';
   const url = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${inputValue}`;
 
   fetch(url)
