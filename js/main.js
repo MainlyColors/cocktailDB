@@ -145,7 +145,7 @@ document.querySelector('button').addEventListener('click', (e) => {
   let inputValue = document.querySelector('input').value;
 
   inputValue.split(' ').join('_');
-
+  cardContainer.innerHTML = '';
   const url = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${inputValue}`;
 
   fetch(url)
