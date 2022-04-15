@@ -137,6 +137,10 @@ document.querySelector('button').addEventListener('click', (e) => {
   fetch(url)
     .then((res) => res.json()) // parse response as JSON
     .then((data) => {
+      Array.from(cardContainer.children).forEach((el) => {
+        if (el.classList.contains('card')) el.remove();
+      });
+
       data.drinks.forEach((c) => {
         const el = createDrinkCard(
           c.strDrink,
