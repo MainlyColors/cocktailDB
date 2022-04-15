@@ -91,8 +91,9 @@ function centerCardsInCarousel(containerEl, cardClass) {
  * @sideEffect changes card element translateX
  */
 function slideCards(e) {
-  const containerEl = e.target.parentElement;
-  const buttonClicked = e.target.id.split('-')[0];
+  // arrow img's were an after thought, parentElement fixes that
+  const containerEl = e.target.parentElement.parentElement;
+  const buttonClicked = e.target.parentElement.id.split('-')[0];
   // no elements in parent
   if (containerEl.children.length <= 2) return;
 

@@ -97,14 +97,14 @@ button:active {
 }
 
 /* center line */
-.card-container::before {
+/* .card-container::before {
   content: '';
   position: absolute;
   width: 2px;
   height: 100%;
   background-color: yellow;
   z-index: 90;
-}
+} */
 
 .card {
   /* padding: 20px 15px; */
@@ -154,9 +154,9 @@ button:active {
 .arrow {
   top: calc(50% - 25px);
   position: absolute;
-  width: 30px;
+  width: 50px;
   height: 50px;
-  background-color: yellow;
+  background-color: var(--text-primary);
   z-index: 90;
   cursor: pointer;
 }
